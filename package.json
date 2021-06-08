@@ -16,7 +16,9 @@
     "test:watch": "jest --watch",
     "test:watchall": "jest --watchAll",
     "test:coverage": "jest --coverage",
-    "test:coverage:serve": "serve ./.testreports"
+    "test:coverage:serve": "serve ./.testreports",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "lint-staged": [
     "check-types",
@@ -30,11 +32,22 @@
     "serve-static": "^1.14.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@storybook/addon-a11y": "^6.2.9",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/addon-notes": "^5.3.21",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-viewport": "^6.2.9",
+    "@storybook/react": "^6.2.9",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@types/react": "17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",
+    "add": "^2.0.6",
+    "babel-loader": "^8.2.2",
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.24.0",
@@ -48,6 +61,7 @@
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.1",
     "serve": "^12.0.0",
-    "typescript": "4.3.2"
+    "typescript": "4.3.2",
+    "yarn": "^1.22.10"
   }
 }

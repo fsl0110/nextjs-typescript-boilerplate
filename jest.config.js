@@ -36,13 +36,13 @@ module.exports = {
   modulePaths: ['<rootDir>/src'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   testPathIgnorePatterns: [
-    '<rootDir>[/\\\\](node_modules|.next|.testreports)[/\\\\]',
+    '<rootDir>[/\\\\](node_modules|.next|.testreports|.storybook)[/\\\\]',
   ],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   moduleNameMapper: {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
     '\\.(gif|ttf|eot|svg|png)$':
-      '<rootDir>/src/tests/utils/__mocks__/fileMock.js',
+      '<rootDir>/src/app/utils/test/__mocks__/fileMock.js',
   },
   watchPlugins: [
     'jest-watch-typeahead/filename',

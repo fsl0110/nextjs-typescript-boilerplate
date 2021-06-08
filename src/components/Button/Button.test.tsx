@@ -1,4 +1,4 @@
-import { render } from 'tests';
+import { render } from 'app';
 import { Button } from 'components';
 
 describe('Button', () => {

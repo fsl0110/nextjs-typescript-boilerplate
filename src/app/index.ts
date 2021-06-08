@@ -1,1 +1,1 @@
-export * from '../tests/utils/testingLibraryUtils';
+export * from './utils/test/testingLibraryUtils';
