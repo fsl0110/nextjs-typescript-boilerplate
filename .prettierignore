@@ -3,3 +3,4 @@ public
 .next
 yarn.lock
 .testreports
+.storybook-static
