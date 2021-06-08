@@ -2,3 +2,4 @@ node_modules
 public
 .next
 yarn.lock
+.testreports

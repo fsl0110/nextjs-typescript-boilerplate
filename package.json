@@ -11,18 +11,27 @@
     "format:write": "prettier --write .",
     "lint": "eslint src --cache",
     "lint:fix": "eslint src --cache --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:watchall": "jest --watchAll",
+    "test:coverage": "jest --coverage",
+    "test:coverage:serve": "serve ./.testreports"
   },
   "lint-staged": [
+    "check-types",
     "yarn lint:fix",
     "yarn format:write"
   ],
   "dependencies": {
     "next": "10.2.3",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "serve-static": "^1.14.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.13.0",
+    "@testing-library/react": "^11.2.7",
     "@types/react": "17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",
@@ -31,9 +40,14 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sonarjs": "^0.8.0-125",
+    "http-server": "^0.12.3",
     "husky": "^6.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.4",
+    "jest-watch-typeahead": "^0.6.4",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.1",
+    "serve": "^12.0.0",
     "typescript": "4.3.2"
   }
 }
