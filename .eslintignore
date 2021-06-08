@@ -1,0 +1,6 @@
+**/.next/*
+**/.vscode/*
+**/public/*
+**/node_modules/*
+**/styles/*
+**/out/*
