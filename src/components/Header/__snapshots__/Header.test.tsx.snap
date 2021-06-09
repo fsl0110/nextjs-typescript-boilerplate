@@ -15,12 +15,12 @@ exports[`Header matches snapshot 1`] = `
         <option
           value="en"
         >
-          en
+          english
         </option>
         <option
           value="de"
         >
-          de
+          german
         </option>
       </select>
     </div>

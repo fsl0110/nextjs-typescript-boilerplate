@@ -8,6 +8,8 @@ export const Header: FC<HeaderProps> = () => {
   const { t } = useTranslation('common');
   const router: NextRouter = useRouter();
 
+  console.log('### router', router);
+
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     router.push('/', {}, { locale: e.target.value });
   };
