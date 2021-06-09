@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@import url(home.css);
+@import url(button.css);
+@import url(header.css);
+@import url(page.css);

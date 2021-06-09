@@ -1,10 +1,9 @@
 import { render } from 'app';
-import { Button } from 'components';
+import { Button } from './Button';
 
 describe('Button', () => {
   it('renders Button component', () => {
     render(<Button label="My Button" />);
-    /*     screen.debug(); */
   });
 
   it('matches snapshot', () => {

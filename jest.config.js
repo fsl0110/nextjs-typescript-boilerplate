@@ -34,6 +34,10 @@ module.exports = {
   coverageReporters: ['html', 'text'],
   roots: ['<rootDir>/src'],
   modulePaths: ['<rootDir>/src'],
+  /* disabled .spec. files for jest in order to reserve them for cypress 
+     https://jestjs.io/docs/configuration#testmatch-arraystring
+  */
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(test).[jt]s?(x)'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   testPathIgnorePatterns: [
     '<rootDir>[/\\\\](node_modules|.next|.testreports|.storybook)[/\\\\]',
