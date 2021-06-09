@@ -1,6 +1,9 @@
 {
   "name": "nextjs-typescript-boilerplate",
   "version": "0.1.0",
+  "author": "fsl0110",
+  "description": "A Next.js TypeScript Boilerplate with Storybook, Testing Library, Cypress, Husky, ESLint, Prettier, ...",
+  "license": "ISC",
   "private": true,
   "scripts": {
     "dev": "next dev",
