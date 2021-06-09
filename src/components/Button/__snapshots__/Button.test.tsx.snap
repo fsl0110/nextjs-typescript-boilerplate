@@ -3,10 +3,10 @@
 exports[`Button matches snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="storybook-button storybook-button--medium storybook-button--secondary"
+    class="text-white rounded-md bg-blue-400 text-xl px-4 py-1.5 undefined"
     type="button"
   >
-    My Button
+    Button
   </button>
 </DocumentFragment>
 `;

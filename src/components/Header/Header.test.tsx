@@ -2,24 +2,12 @@ import { render } from 'app';
 import { Header } from './Header';
 
 describe('Header', () => {
-  it('renders Header component', () => {
-    render(
-      <Header
-        onLogin={() => null}
-        onLogout={() => null}
-        onCreateAccount={() => null}
-      />,
-    );
+  it('renders Button component', () => {
+    render(<Header />);
   });
 
   it('matches snapshot', () => {
-    const { asFragment } = render(
-      <Header
-        onLogin={() => null}
-        onLogout={() => null}
-        onCreateAccount={() => null}
-      />,
-    );
+    const { asFragment } = render(<Header />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

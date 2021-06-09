@@ -1,49 +1,51 @@
-export interface ButtonProps {
+import classNames from 'classnames';
+import { FC, HTMLAttributes } from 'react';
+
+// Storybook error: var trimmedText = (tag.text || '').trim();
+// occurs when using @ in comments or using HTMLAttributes which uses @ in comments
+// https://github.com/styleguidist/react-docgen-typescript/issues/356
+// switched to typescript@4.2.4
+
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   /**
-   * Is this the principal call to action on the page?
+   * What background color to use?
+   *
    */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
+  color?: 'gray' | 'blue' | 'green';
   /**
    * How large should the button be?
+   *
    */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
+  size?: 'sm' | 'md' | 'lg';
   /**
    * Optional click handler
    */
   onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button: React.FC<ButtonProps> = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
+export const Button: FC<ButtonProps> = ({
+  color = 'blue',
+  size = 'md',
+  className,
+  children,
   ...props
 }) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary';
+  const styles = classNames({
+    'bg-gray-400': color === 'gray',
+    'bg-blue-400': color === 'blue',
+    'bg-green-400': color === 'green',
+    'text-base px-2.5 py-1': size === 'sm',
+    'text-xl px-4 py-1.5': size === 'md',
+    'text-3xl px-6 py-2.5': size === 'lg',
+  });
+
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
-        ' ',
-      )}
-      style={{ backgroundColor }}
+      className={`text-white rounded-md ${styles} ${className}`}
       {...props}
     >
-      {label}
+      {children}
     </button>
   );
 };

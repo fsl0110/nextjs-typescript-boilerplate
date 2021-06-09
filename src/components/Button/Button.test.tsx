@@ -3,11 +3,11 @@ import { Button } from './Button';
 
 describe('Button', () => {
   it('renders Button component', () => {
-    render(<Button label="My Button" />);
+    render(<Button>Button</Button>);
   });
 
   it('matches snapshot', () => {
-    const { asFragment } = render(<Button label="My Button" />);
+    const { asFragment } = render(<Button>Button</Button>);
     expect(asFragment()).toMatchSnapshot();
   });
 });

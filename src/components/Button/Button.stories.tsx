@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import markdown from './Button.md';
 import { Button, ButtonProps } from './Button';
@@ -6,35 +5,44 @@ import { Button, ButtonProps } from './Button';
 export default {
   title: 'Example/Button',
   component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
   parameters: {
     notes: markdown,
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => (
+  <Button {...args}>Button</Button>
+);
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Button',
+export const Default = Template.bind({});
+Default.args = {};
+
+export const Small = Template.bind({});
+Small.args = {
+  size: 'sm',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
+export const Medium = Template.bind({});
+Medium.args = {
+  size: 'md',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
-  label: 'Button',
+  size: 'lg',
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const Gray = Template.bind({});
+Gray.args = {
+  color: 'gray',
+};
+
+export const Blue = Template.bind({});
+Blue.args = {
+  color: 'blue',
+};
+
+export const Green = Template.bind({});
+Green.args = {
+  color: 'green',
 };

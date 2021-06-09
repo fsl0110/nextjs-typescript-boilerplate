@@ -4,14 +4,8 @@ describe('Homepage Test', () => {
   });
 
   it('should display content', () => {
-    cy.get('h1').should('be.visible').and('contain', 'Welcome to Next.js!');
-    cy.get('.main')
+    cy.get('h1')
       .should('be.visible')
-      .and('contain', 'Get started by editing');
-    cy.get('h2').should('be.visible').and('contain', 'Documentation');
-    cy.get('h2').should('be.visible').and('contain', 'Learn');
-    cy.get('h2').should('be.visible').and('contain', 'Examples');
-    cy.get('h2').should('be.visible').and('contain', 'Deploy');
-    cy.get('.footer').should('be.visible').and('contain', 'Powered by');
+      .and('contain', 'Welcome to Next.js TypeScript Boilerplate');
   });
 });
