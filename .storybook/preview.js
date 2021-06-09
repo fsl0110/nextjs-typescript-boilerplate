@@ -1,5 +1,9 @@
 import '../src/app/styles/globals.css';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { withNextRouter } from '../src/app/utils/storybook/withNextRouter';
+import { withI18next } from '../src/app/utils/storybook/withI18next';
+
+export const decorators = [withI18next, withNextRouter];
 
 const customViewports = {
   mobile1: {

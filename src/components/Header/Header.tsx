@@ -1,14 +1,15 @@
 import { useRouter, NextRouter } from 'next/router';
 import { ChangeEvent, FC } from 'react';
-import { useTranslation } from 'next-i18next';
+// use react-i18next instead of next-i18next for use in storybook
+// see: https://github.com/isaachinman/next-i18next/issues/935
+import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
 
 export interface HeaderProps {}
 
 export const Header: FC<HeaderProps> = () => {
   const { t } = useTranslation('common');
   const router: NextRouter = useRouter();
-
-  console.log('### router', router);
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     router.push('/', {}, { locale: e.target.value });
@@ -19,6 +20,7 @@ export const Header: FC<HeaderProps> = () => {
       className={`flex justify-between items-center px-4 h-16 bg-gray-200`}
     >
       <div className="text-2xl font-bold">Next.js Boilerplate</div>
+      <Link href="/">A Link</Link>
       <div>
         <select value={router.locale} onChange={handleChange}>
           <option value="en">{t('english')}</option>

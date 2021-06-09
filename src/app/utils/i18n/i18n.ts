@@ -15,3 +15,5 @@ i18n.use(initReactI18next).init({
   ns: ['common', 'home'],
   resources,
 });
+
+export default i18n;
