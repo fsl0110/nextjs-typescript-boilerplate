@@ -1,5 +1,5 @@
 import { render } from 'app';
-import { Header } from 'components';
+import { Header } from './Header';
 
 describe('Header', () => {
   it('renders Header component', () => {
