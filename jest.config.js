@@ -53,7 +53,4 @@ module.exports = {
     'jest-watch-typeahead/testname',
   ],
   testEnvironment: 'jsdom',
-  transform: {
-    '^.+\\.(ts|tsx)$': 'babel-jest',
-  },
 };

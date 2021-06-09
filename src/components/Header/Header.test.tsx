@@ -6,6 +6,7 @@ describe('Header', () => {
     mockUseRouter.mockImplementationOnce(() => ({
       locale: 'en',
     }));
+
     render(<Header />);
   });
 
@@ -13,6 +14,7 @@ describe('Header', () => {
     mockUseRouter.mockImplementationOnce(() => ({
       locale: 'en',
     }));
+
     const { asFragment } = render(<Header />);
     expect(asFragment()).toMatchSnapshot();
   });
