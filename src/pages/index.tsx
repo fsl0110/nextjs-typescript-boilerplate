@@ -1,7 +1,12 @@
-import { Header } from 'components';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
+import { useTranslation } from 'next-i18next';
+import { Header } from 'components';
 
 export default function Home() {
+  const { t } = useTranslation('home');
+
   return (
     <div>
       <Head>
@@ -11,10 +16,16 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <h1 className="title">Welcome to Next.js TypeScript Boilerplate</h1>
+        <h1 className="mt-16 text-2xl text-center">{t('welcome')}</h1>
       </main>
-
-      <footer className="footer"></footer>
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale!, ['common', 'home'])),
+    },
+  };
+};
