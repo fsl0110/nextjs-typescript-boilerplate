@@ -7,6 +7,7 @@ import { FC, HTMLAttributes } from 'react';
 // switched to typescript@4.2.4
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  type?: 'submit' | 'button';
   /**
    * What background color to use?
    *
@@ -24,6 +25,7 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<ButtonProps> = ({
+  type = 'button',
   color = 'blue',
   size = 'md',
   className,
@@ -41,7 +43,7 @@ export const Button: FC<ButtonProps> = ({
 
   return (
     <button
-      type="button"
+      type={type}
       className={`text-white rounded-md ${styles} ${className}`}
       {...props}
     >

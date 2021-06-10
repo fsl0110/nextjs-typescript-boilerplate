@@ -9,4 +9,12 @@
     src: local('Lora'),
       url('../../../public/fonts/Raleway-Regular.ttf') format('truetype');
   }
+
+  .form-input {
+    @apply py-1 px-4 border border-gray-600;
+  }
+
+  .form-label {
+    @apply mt-4 font-bold;
+  }
 }

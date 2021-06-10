@@ -3,7 +3,7 @@ import markdown from './Button.md';
 import { Button, ButtonProps } from './Button';
 
 export default {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: Button,
   parameters: {
     notes: markdown,

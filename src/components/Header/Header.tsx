@@ -12,15 +12,17 @@ export const Header: FC<HeaderProps> = () => {
   const router: NextRouter = useRouter();
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    router.push('/', {}, { locale: e.target.value });
+    router.push(router.pathname, {}, { locale: e.target.value });
   };
 
   return (
     <header
       className={`flex justify-between items-center px-4 h-16 bg-gray-200`}
     >
-      <div className="text-2xl font-bold">Next.js Boilerplate</div>
-      <Link href="/">A Link</Link>
+      <div className="text-2xl font-bold">
+        <Link href="/">Next.js Boilerplate</Link>
+      </div>
+
       <div>
         <select value={router.locale} onChange={handleChange}>
           <option value="en">{t('english')}</option>

@@ -1,0 +1,16 @@
+{
+    "contact": "Kontakt",
+    "gender": "Geschlecht",
+    "gender-msg": "Geschlecht fehlt",
+    "male": "Herr",
+    "female": "Frau",
+    "firstname": "Vorname",
+    "firstname-msg": "Vorname fehlt",
+    "surename": "Nachname",
+    "surename-msg": "Nachname fehlt",
+    "email": "E-Mail",
+    "email-msg": "Email fehlt oder ist nicht valide",
+    "message": "Nachricht",
+    "message-msg": "Nachricht fehlt",
+    "submit": "Absenden"
+}
