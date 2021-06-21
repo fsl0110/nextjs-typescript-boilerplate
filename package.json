@@ -20,15 +20,17 @@
     "test:watchall": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "test:coverage:serve": "serve ./.testreports",
+    "test:clear-cache": "jest --clearCache",
     "test:e2e:open": "cypress open",
     "test:e2e:run": "cypress run",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o .storybook-static"
   },
   "lint-staged": [
-    "check-types",
+    "yarn check-types",
     "yarn lint:fix",
-    "yarn format:write"
+    "yarn format:write",
+    "yarn test"
   ],
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
@@ -59,6 +61,7 @@
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@types/classnames": "^2.3.1",
+    "@types/jest": "^26.0.23",
     "@types/react": "17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",

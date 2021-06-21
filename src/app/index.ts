@@ -1,2 +1,2 @@
-export * from './utils/test/testingLibraryUtils';
+export * from './utils/test/testUtils';
 export * from './store/store';
