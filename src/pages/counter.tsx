@@ -27,7 +27,10 @@ export default function CounterPage() {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['common', 'counter'])),
+      ...(await serverSideTranslations(locale as string, [
+        'common',
+        'counter',
+      ])),
     },
   };
 };

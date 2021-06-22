@@ -7,7 +7,7 @@ import {
 import { counterReducer, contactReducer } from 'features';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   counter: counterReducer,
   contact: contactReducer,
 });

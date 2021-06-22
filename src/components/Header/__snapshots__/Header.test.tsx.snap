@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header matches snapshot 1`] = `
+exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <header
     class="flex justify-between items-center px-4 h-16 bg-gray-200"
@@ -19,12 +19,12 @@ exports[`Header matches snapshot 1`] = `
         <option
           value="en"
         >
-          english
+          English
         </option>
         <option
           value="de"
         >
-          german
+          German
         </option>
       </select>
     </div>

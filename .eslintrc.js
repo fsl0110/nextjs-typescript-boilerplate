@@ -17,20 +17,14 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'react-hooks',
-    'sonarjs',
-    'prettier',
-  ],
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'sonarjs'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
     'plugin:sonarjs/recommended',
-    'plugin:prettier/recommended',
+    'prettier',
   ],
   rules: {
     'comma-dangle': [2, 'always-multiline'],
@@ -51,6 +45,11 @@ module.exports = {
     'sonarjs/prefer-immediate-return': 0,
     'sonarjs/cognitive-complexity': 1,
     'sonarjs/no-duplicate-string': 0,
-    'prettier/prettier': 2,
+    '@typescript-eslint/no-empty-interface': [
+      'error',
+      {
+        allowSingleExtends: true, // react-i18next.d.ts
+      },
+    ],
   },
 };

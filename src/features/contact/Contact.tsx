@@ -17,7 +17,6 @@ export const Contact: FC = () => {
     dispatch(setContactData(data));
   };
 
-  console.log('errors', errors);
   return (
     <div className="mt-4">
       <form
@@ -61,7 +60,7 @@ export const Contact: FC = () => {
           {...register('email', {
             required: true,
             pattern:
-              /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
+              /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i,
           })}
           className="form-input"
         />

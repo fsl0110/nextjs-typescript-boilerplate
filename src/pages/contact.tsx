@@ -27,7 +27,10 @@ export default function ContactPage() {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['common', 'contact'])),
+      ...(await serverSideTranslations(locale as string, [
+        'common',
+        'contact',
+      ])),
     },
   };
 };

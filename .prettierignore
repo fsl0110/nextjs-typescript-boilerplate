@@ -4,3 +4,5 @@ public
 yarn.lock
 .testreports
 .storybook-static
+package-lock.json
+next-env.d.ts

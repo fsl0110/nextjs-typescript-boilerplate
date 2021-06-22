@@ -16,12 +16,15 @@ export const Counter: FC = () => {
   const value = useAppSelector(counterValue);
 
   const handleIncrementByAmount = () => {
-    dispatch(incrementByAmount(Number(ref.current!.value)));
+    const value = ref.current && ref.current.value;
+    dispatch(incrementByAmount(Number(value)));
   };
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="mt-8 mb-4 text-5xl">{value}</div>
+      <div className="mt-8 mb-4 text-5xl" aria-label="count">
+        {value}
+      </div>
       <div>
         <Button className="mx-2" onClick={() => dispatch(decrement())}>
           -
@@ -33,6 +36,7 @@ export const Counter: FC = () => {
       <div className="mt-8">
         <input
           ref={ref}
+          aria-label="input"
           className="w-16 text-2xl text-center border-2 border-gray-900"
         />
       </div>

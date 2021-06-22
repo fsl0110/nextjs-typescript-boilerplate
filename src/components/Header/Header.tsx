@@ -5,9 +5,7 @@ import { ChangeEvent, FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 
-export interface HeaderProps {}
-
-export const Header: FC<HeaderProps> = () => {
+export const Header: FC = () => {
   const { t } = useTranslation('common');
   const router: NextRouter = useRouter();
 

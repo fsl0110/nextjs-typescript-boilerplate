@@ -21,10 +21,10 @@ export default function HomePage() {
       <main>
         <h1 className="mt-16 text-2xl text-center">{t('home:welcome')}</h1>
         <div className="flex justify-around mt-16 underline">
-          <Link href="/counter" locale={locale!}>
+          <Link href="/counter" locale={locale as string}>
             {t('counter:counter')}
           </Link>
-          <Link href="/contact" locale={locale!}>
+          <Link href="/contact" locale={locale as string}>
             {t('contact:contact')}
           </Link>
         </div>
@@ -36,7 +36,7 @@ export default function HomePage() {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, [
+      ...(await serverSideTranslations(locale as string, [
         'common',
         'home',
         'counter',

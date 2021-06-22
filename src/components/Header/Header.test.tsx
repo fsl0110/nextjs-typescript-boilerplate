@@ -1,21 +1,26 @@
-import { render, mockUseRouter } from 'app';
+import { render } from 'app';
 import { Header } from './Header';
 
-describe('Header', () => {
-  it('renders Header component', () => {
-    mockUseRouter.mockImplementationOnce(() => ({
-      locale: 'en',
-    }));
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+export const mockUseRouter = jest.spyOn(require('next/router'), 'useRouter');
 
-    render(<Header />);
-  });
+test('renders Header component', () => {
+  mockUseRouter.mockImplementationOnce(() => ({
+    locale: 'en',
+  }));
 
-  it('matches snapshot', () => {
-    mockUseRouter.mockImplementationOnce(() => ({
-      locale: 'en',
-    }));
+  render(<Header />);
 
-    const { asFragment } = render(<Header />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  mockUseRouter.mockReset();
+});
+
+test('matches snapshot', () => {
+  mockUseRouter.mockImplementationOnce(() => ({
+    locale: 'en',
+  }));
+
+  const { asFragment } = render(<Header />);
+  expect(asFragment()).toMatchSnapshot();
+
+  mockUseRouter.mockReset();
 });
