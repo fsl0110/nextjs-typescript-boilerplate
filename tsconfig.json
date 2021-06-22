@@ -13,8 +13,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": "src",
-    "types": ["jest", "@testing-library/jest-dom", "cypress"]
+    "types": ["jest", "@testing-library/jest-dom", "cypress"],
+    "baseUrl": ".",
+    "paths": {
+      "@features": ["src/features/index"],
+      "@components": ["src/components/index"],
+      "@store": ["src/app/store/store"],
+      "@test": ["src/app/utils/test/testUtils"]
+    }
   },
   "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", ".next", "out"]

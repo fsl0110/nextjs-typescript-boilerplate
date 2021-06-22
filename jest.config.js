@@ -41,6 +41,10 @@ module.exports = {
   ],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   moduleNameMapper: {
+    '@components': '<rootDir>/src/components',
+    '@features': '<rootDir>/src/features',
+    '@store$': '<rootDir>/src/app/store/store',
+    '@test$': '<rootDir>/src/app/utils/test/testUtils',
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
     '\\.(gif|ttf|eot|svg|png)$':
       '<rootDir>/src/app/utils/test/__mocks__/fileMock.js',

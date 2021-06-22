@@ -29,10 +29,13 @@ module.exports = {
     ],
   }),
   webpackFinal: async (config) => {
-    config.resolve.modules = [
-      ...(config.resolve.modules || []),
-      path.resolve(__dirname, '../src'),
-    ];
+    config.resolve.alias = {
+      ...config.resolve?.alias,
+      '@components': path.resolve(__dirname, '../src/components'),
+      '@features': path.resolve(__dirname, '../src/features'),
+      '@store': path.resolve(__dirname, '../src/app/store/store'),
+      '@test': path.resolve(__dirname, '../src/app/utils/test/testUtils'),
+    };
     return config;
   },
 };

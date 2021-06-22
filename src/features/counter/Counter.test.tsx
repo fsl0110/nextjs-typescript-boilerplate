@@ -1,7 +1,7 @@
-import { fireEvent, render } from 'app';
+import { render, fireEvent } from '@test';
 import { Counter } from './Counter';
 
-test('renders with redux defaults and increments and decrements corretly', () => {
+test('renders with redux default initialState and increments and decrements corretly', () => {
   const { getByLabelText, getByText } = render(<Counter />);
 
   expect(getByLabelText(/count/i)).toHaveTextContent('1');

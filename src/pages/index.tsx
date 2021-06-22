@@ -2,7 +2,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
-import { Header } from 'components';
+import { Header } from '@components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 

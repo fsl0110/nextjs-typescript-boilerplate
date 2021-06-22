@@ -1,4 +1,4 @@
-import { render } from 'app';
+import { render } from '@test';
 import { Button } from './Button';
 
 test('renders Button component', () => {

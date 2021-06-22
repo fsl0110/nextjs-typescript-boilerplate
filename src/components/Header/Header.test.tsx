@@ -1,4 +1,4 @@
-import { render } from 'app';
+import { render } from '@test';
 import { Header } from './Header';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

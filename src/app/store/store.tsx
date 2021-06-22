@@ -4,7 +4,7 @@ import {
   ThunkAction,
   Action,
 } from '@reduxjs/toolkit';
-import { counterReducer, contactReducer } from 'features';
+import { counterReducer, contactReducer } from '@features';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 export const rootReducer = combineReducers({

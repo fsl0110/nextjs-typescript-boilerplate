@@ -2,8 +2,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
-import { Header } from 'components';
-import { Counter } from 'features';
+import { Header } from '@components';
+import { Counter } from '@features';
 
 export default function CounterPage() {
   const { t } = useTranslation('counter');

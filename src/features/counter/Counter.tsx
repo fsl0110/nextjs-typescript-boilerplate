@@ -1,6 +1,4 @@
 import { FC, useRef } from 'react';
-import { Button } from 'components';
-import { useAppDispatch, useAppSelector } from 'app';
 import {
   decrement,
   increment,
@@ -8,6 +6,8 @@ import {
   counterValue,
 } from './counterSlice';
 import { useTranslation } from 'react-i18next';
+import { useAppDispatch, useAppSelector } from '@store';
+import { Button } from '@components';
 
 export const Counter: FC = () => {
   const { t } = useTranslation('counter');

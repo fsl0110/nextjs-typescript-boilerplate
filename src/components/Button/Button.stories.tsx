@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react';
-import markdown from './Button.md';
 import { Button, ButtonProps } from './Button';
+import markdown from './Button.md';
 
 export default {
   title: 'Components/Button',

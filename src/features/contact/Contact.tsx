@@ -1,5 +1,5 @@
-import { useAppDispatch } from 'app';
-import { Button } from 'components';
+import { useAppDispatch } from '@store';
+import { Button } from '@components';
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
