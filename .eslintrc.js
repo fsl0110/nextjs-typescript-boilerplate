@@ -17,13 +17,20 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: ['react', '@typescript-eslint', 'react-hooks', 'sonarjs'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'react-hooks',
+    'sonarjs',
+    'jsx-a11y',
+  ],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
     'plugin:sonarjs/recommended',
+    'plugin:jsx-a11y/recommended',
     'prettier',
   ],
   rules: {
@@ -51,5 +58,6 @@ module.exports = {
         allowSingleExtends: true, // react-i18next.d.ts
       },
     ],
+    'jsx-a11y/no-onchange': 0, // deprecated
   },
 };

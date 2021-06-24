@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react';
+import { FC, useRef, useEffect } from 'react';
 import {
   decrement,
   increment,
@@ -14,6 +14,10 @@ export const Counter: FC = () => {
   const ref = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
   const value = useAppSelector(counterValue);
+
+  useEffect(() => {
+    ref.current?.focus();
+  }, []);
 
   const handleIncrementByAmount = () => {
     const value = ref.current && ref.current.value;
@@ -33,18 +37,21 @@ export const Counter: FC = () => {
           +
         </Button>
       </div>
-      <div className="mt-8">
+      <form className="flex flex-col justify-center items-center mt-8">
+        <label className="font-bold" htmlFor="add-count">
+          Add to counter
+        </label>
         <input
+          id="add-count"
+          data-testid="count-input"
           ref={ref}
-          aria-label="input"
-          className="w-16 text-2xl text-center border-2 border-gray-900"
+          /*    aria-label="input" */
+          className="block mt-2 w-16 text-2xl text-center border-2 border-gray-900"
         />
-      </div>
-      <div>
         <Button className="mt-2" onClick={handleIncrementByAmount}>
           {t('add')}
         </Button>
-      </div>
+      </form>
     </div>
   );
 };

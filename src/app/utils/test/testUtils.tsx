@@ -1,6 +1,7 @@
 import { FC, ReactElement } from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import 'jest-axe/extend-expect';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18nForTests';
 /* import i18n from '../i18n/i18n'; */
