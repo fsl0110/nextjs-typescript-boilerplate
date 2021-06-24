@@ -1,8 +1,9 @@
 module.exports = {
   env: {
-    browser: true,
-    es2021: true,
-    node: true,
+    'browser': true,
+    'es2021': true,
+    'node': true,
+    'jest/globals': true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -16,6 +17,9 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    jest: {
+      version: 'detect',
+    },
   },
   plugins: [
     'react',
@@ -23,6 +27,8 @@ module.exports = {
     'react-hooks',
     'sonarjs',
     'jsx-a11y',
+    'testing-library',
+    'jest',
   ],
   extends: [
     'eslint:recommended',
@@ -32,6 +38,12 @@ module.exports = {
     'plugin:sonarjs/recommended',
     'plugin:jsx-a11y/recommended',
     'prettier',
+  ],
+  overrides: [
+    {
+      files: ['**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react', 'plugin:jest/recommended'],
+    },
   ],
   rules: {
     'comma-dangle': [2, 'always-multiline'],

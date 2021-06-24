@@ -34,7 +34,7 @@ test('add input value', () => {
   expect(screen.getByLabelText('count')).toHaveTextContent('10');
 });
 
-test('form is accessible', async () => {
+test('counter is accessible', async () => {
   const { container } = render(<Counter />);
   const results = await axe(container);
 
