@@ -39,13 +39,16 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:sonarjs/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:cypress/recommended',
     'prettier',
   ],
   overrides: [
     {
-      files: ['**/?(*.)+(test).[jt]s?(x)'],
+      files: ['src/**/?(*.)+(spec|test).[jt]s?(x)'],
       extends: ['plugin:testing-library/react', 'plugin:jest/recommended'],
+    },
+    {
+      files: ['cypress/**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:cypress/recommended'],
     },
   ],
   rules: {

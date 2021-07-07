@@ -14,8 +14,14 @@ exports[`matches snapshot 1`] = `
         Next.js Boilerplate
       </a>
     </div>
+    <span>
+      counter: 0
+    </span>
     <div>
-      <select>
+      <select
+        aria-label="select-language"
+        name="language"
+      >
         <option
           value="en"
         >

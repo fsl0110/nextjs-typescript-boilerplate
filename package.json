@@ -71,6 +71,7 @@
     "autoprefixer": "^10.2.6",
     "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
+    "babel-plugin-react-remove-properties": "^0.3.0",
     "cypress": "^7.5.0",
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",

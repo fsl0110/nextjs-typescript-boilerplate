@@ -1,4 +1,11 @@
 {
   "presets": ["next/babel"],
-  "plugins": []
+  "plugins": [],
+  "env": {
+    "production": {
+      "plugins": [
+        ["react-remove-properties", { "properties": ["data-testid"] }]
+      ]
+    }
+  }
 }

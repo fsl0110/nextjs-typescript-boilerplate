@@ -6,13 +6,13 @@ import { axe } from 'jest-axe';
 test('renders with redux default initialState and increments and decrements corretly', () => {
   render(<Counter />);
 
-  expect(screen.getByLabelText('count')).toHaveTextContent('1');
+  expect(screen.getByLabelText('count')).toHaveTextContent('0');
 
   userEvent.click(screen.getByText('+'));
-  expect(screen.getByLabelText('count')).toHaveTextContent('2');
+  expect(screen.getByLabelText('count')).toHaveTextContent('1');
 
   userEvent.click(screen.getByText('-'));
-  expect(screen.getByLabelText('count')).toHaveTextContent('1');
+  expect(screen.getByLabelText('count')).toHaveTextContent('0');
 });
 
 test('renders redux test initialState', () => {
@@ -31,7 +31,7 @@ test('add input value', () => {
   expect(input.value).toBe('9');
 
   userEvent.click(screen.getByText('add'));
-  expect(screen.getByLabelText('count')).toHaveTextContent('10');
+  expect(screen.getByLabelText('count')).toHaveTextContent('9');
 });
 
 test('counter is accessible', async () => {
