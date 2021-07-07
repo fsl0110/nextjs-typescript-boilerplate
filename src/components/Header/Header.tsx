@@ -26,7 +26,12 @@ export const Header: FC = () => {
         {t('counter:counter')}: {counter.value}
       </span>
       <div>
-        <select value={router.locale} onChange={handleChange}>
+        <select
+          name="language"
+          aria-label="select-language"
+          value={router.locale}
+          onChange={handleChange}
+        >
           <option value="en">{t('common:english')}</option>
           <option value="de">{t('common:german')}</option>
         </select>

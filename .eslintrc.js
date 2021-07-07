@@ -4,6 +4,7 @@ module.exports = {
     'es2021': true,
     'node': true,
     'jest/globals': true,
+    'cypress/globals': true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -29,6 +30,7 @@ module.exports = {
     'jsx-a11y',
     'testing-library',
     'jest',
+    'cypress',
   ],
   extends: [
     'eslint:recommended',
@@ -37,11 +39,12 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:sonarjs/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:cypress/recommended',
     'prettier',
   ],
   overrides: [
     {
-      files: ['**/?(*.)+(spec|test).[jt]s?(x)'],
+      files: ['**/?(*.)+(test).[jt]s?(x)'],
       extends: ['plugin:testing-library/react', 'plugin:jest/recommended'],
     },
   ],
