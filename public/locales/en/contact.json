@@ -9,8 +9,10 @@
     "surename": "Surename",
     "surename-msg": "Surename is required",
     "email": "Email",
-    "email-msg": "Email is required or not valid",
+    "email-msg-required": "Email is required",
+    "email-msg-pattern": "Email is not valid",
     "message": "Message",
     "message-msg": "Message is required",
-    "submit": "Send"
+    "submit": "Send",
+    "message-required":"This field is required"
 }

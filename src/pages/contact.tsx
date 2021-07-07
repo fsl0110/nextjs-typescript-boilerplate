@@ -17,7 +17,7 @@ export default function ContactPage() {
       </Head>
       <Header />
       <main>
-        <h1 className="mt-16 text-4xl text-center">{t('contact')}</h1>
+        <h1 className="mt-8 text-4xl text-center">{t('contact')}</h1>
         <Contact />
       </main>
     </div>
@@ -30,6 +30,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       ...(await serverSideTranslations(locale as string, [
         'common',
         'contact',
+        'counter',
       ])),
     },
   };

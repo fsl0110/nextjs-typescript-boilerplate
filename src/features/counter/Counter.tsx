@@ -38,15 +38,12 @@ export const Counter: FC = () => {
         </Button>
       </div>
       <form className="flex flex-col justify-center items-center mt-8">
-        <label className="font-bold" htmlFor="add-count">
-          Add to counter
-        </label>
         <input
           id="add-count"
           data-testid="count-input"
           ref={ref}
-          /*    aria-label="input" */
-          className="block mt-2 w-16 text-2xl text-center border-2 border-gray-900"
+          aria-label="input"
+          className="block mt-2 w-32 text-2xl text-center border-2 border-gray-900"
         />
         <Button className="mt-2" onClick={handleIncrementByAmount}>
           {t('add')}

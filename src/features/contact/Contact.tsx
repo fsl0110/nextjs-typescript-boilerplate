@@ -4,6 +4,7 @@ import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { setContactData, ContactData } from './contactSlice';
+import { FormErrors } from '@components';
 
 export const Contact: FC = () => {
   const { t } = useTranslation('contact');
@@ -16,66 +17,61 @@ export const Contact: FC = () => {
   const onSubmit = (data: ContactData) => {
     dispatch(setContactData(data));
   };
+  console.log(errors);
 
   return (
-    <div className="mt-4">
+    <div className="mt-4 mb-12">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="container flex flex-col mx-auto w-2/3 md:w-1/3"
+        className="container flex flex-col mx-auto mb-4 w-2/3 md:w-1/3"
       >
-        <label className="mt-4 form-label">{t('gender')}</label>
+        <label>{t('gender')}</label>
         <select
           {...register('gender', {
-            required: true,
+            required: t('gender-msg'),
           })}
         >
           <option value=""></option>
           <option value="female">{t('female')}</option>
           <option value="male">{t('male')}</option>
         </select>
-        {errors.gender?.type === 'required' && (
-          <p className="text-red-600">{t('gender-msg')}</p>
-        )}
+        <FormErrors error={errors.gender} />
 
-        <label className="form-label">{t('firstname')}</label>
+        <label>{t('firstname')}</label>
         <input
-          {...register('firstname', { required: true })}
-          className="form-input"
+          {...register('firstname', {
+            required: t('firstname-msg'),
+          })}
         />
-        {errors.firstname?.type === 'required' && (
-          <p className="text-red-600">{t('firstname-msg')}</p>
-        )}
+        <FormErrors error={errors.firstname} />
 
-        <label className="form-label">{t('surename')}</label>
+        <label>{t('surename')}</label>
         <input
-          {...register('surename', { required: true })}
-          className="form-input"
+          {...register('surename', {
+            required: t('surename-msg'),
+          })}
         />
-        {errors.surename?.type === 'required' && (
-          <p className="text-red-600">{t('surename-msg')}</p>
-        )}
+        <FormErrors error={errors.surename} />
 
-        <label className="form-label">{t('email')}</label>
+        <label>{t('email')}</label>
         <input
           {...register('email', {
-            required: true,
-            pattern:
-              /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i,
+            required: t('email-msg-required'),
+            pattern: {
+              value: /\S+@\S+\.\S+/,
+              message: t('email-msg-pattern'),
+            },
           })}
-          className="form-input"
         />
-        {errors.email?.type === 'required' && (
-          <p className="text-red-600">{t('email-msg')}</p>
-        )}
+        <FormErrors error={errors.email} />
 
-        <label className="form-label">{t('message')}</label>
+        <label>{t('message')}</label>
         <textarea
-          {...register('message', { required: true })}
-          className="form-input"
+          {...register('message', {
+            required: t('message-msg'),
+          })}
         />
-        {errors.message?.type === 'required' && (
-          <p className="text-red-600">{t('message-msg')}</p>
-        )}
+        <FormErrors error={errors.message} />
 
         <Button
           type="submit"

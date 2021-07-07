@@ -9,7 +9,8 @@
     "surename": "Nachname",
     "surename-msg": "Nachname fehlt",
     "email": "E-Mail",
-    "email-msg": "Email fehlt oder ist nicht valide",
+    "email-msg-required": "Email fehlt",
+    "email-msg-pattern": "Email ist nicht valide",
     "message": "Nachricht",
     "message-msg": "Nachricht fehlt",
     "submit": "Absenden"

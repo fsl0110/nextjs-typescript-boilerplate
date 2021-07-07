@@ -6,15 +6,16 @@
   @font-face {
     font-family: 'Raleway';
     font-weight: 400;
-    src: local('Lora'),
+    src: local('Raleway'),
       url('../../../public/fonts/Raleway-Regular.ttf') format('truetype');
   }
 
-  .form-input {
+  form input,
+  form textarea {
     @apply py-1 px-4 border border-gray-600;
   }
 
-  .form-label {
+  form label {
     @apply mt-4 font-bold;
   }
 }

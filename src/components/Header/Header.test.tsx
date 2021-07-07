@@ -2,7 +2,7 @@ import { render } from '@test';
 import { Header } from './Header';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-export const mockUseRouter = jest.spyOn(require('next/router'), 'useRouter');
+const mockUseRouter = jest.spyOn(require('next/router'), 'useRouter');
 
 test('renders Header component', () => {
   mockUseRouter.mockImplementationOnce(() => ({
