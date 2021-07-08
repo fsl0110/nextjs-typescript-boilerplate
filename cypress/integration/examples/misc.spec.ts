@@ -87,7 +87,9 @@ context('Misc', () => {
         scale: false,
         disableTimersAndAnimations: true,
         screenshotOnRunFailure: true,
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         onBeforeScreenshot() {},
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         onAfterScreenshot() {},
       });
     });

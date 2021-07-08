@@ -28,6 +28,7 @@ context('Local Storage', () => {
     // Clear key matching string in Local Storage
     cy.get('.ls-btn')
       .click()
+      // eslint-disable-next-line sonarjs/no-identical-functions
       .should(() => {
         expect(localStorage.getItem('prop1')).to.eq('red');
         expect(localStorage.getItem('prop2')).to.eq('blue');
@@ -43,6 +44,7 @@ context('Local Storage', () => {
     // Clear keys matching regex in Local Storage
     cy.get('.ls-btn')
       .click()
+      // eslint-disable-next-line sonarjs/no-identical-functions
       .should(() => {
         expect(localStorage.getItem('prop1')).to.eq('red');
         expect(localStorage.getItem('prop2')).to.eq('blue');

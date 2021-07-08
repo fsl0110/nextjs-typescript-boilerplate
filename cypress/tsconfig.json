@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "isolatedModules": false,
+    "types": ["cypress", "Node"]
+  },
+  "include": [
+    "../node_modules/cypress",
+    "./**/*.ts",
+    "integration/home.spec copy.js",
+    "integration/home.spec.js"
+  ]
+}

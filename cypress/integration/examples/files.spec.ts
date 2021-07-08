@@ -2,7 +2,8 @@
 
 /// JSON fixture file can be loaded directly using
 // the built-in JavaScript bundler
-// @ts-ignore
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const requiredExample = require('../../fixtures/example');
 
 context('Files', () => {
@@ -47,6 +48,7 @@ context('Files', () => {
     );
 
     // or use "cy.wrap" and "should('deep.equal', ...)" assertion
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     cy.wrap(this.example, 'fixture vs require').should(
       'deep.equal',

@@ -1,4 +1,4 @@
-describe('Homepage Test', () => {
+context('Homepage Test', () => {
   before(() => {
     cy.visit('http://localhost:3000');
   });

@@ -13,7 +13,8 @@ context('Cypress.Commands', () => {
       {
         prevSubject: true,
       },
-      (subject, method) => {
+
+      (subject, method: 'info' | 'error') => {
         // the previous subject is automatically received
         // and the commands arguments are shifted
 
@@ -21,7 +22,7 @@ context('Cypress.Commands', () => {
         method = method || 'log';
 
         // log the subject to the console
-        // @ts-ignore TS7017
+
         console[method]('The subject is', subject);
 
         // whatever we return becomes the new subject
@@ -31,11 +32,12 @@ context('Cypress.Commands', () => {
       },
     );
 
-    // @ts-ignore TS2339
+    // TODO: add type to cypress => https://docs.cypress.io/guides/tooling/typescript-support#Types-for-custom-commands
     cy.get('button')
       .console('info')
       .then(($button) => {
         // subject is still $button
+        expect($button).to.exist;
       });
   });
 });
@@ -95,7 +97,7 @@ context('Cypress.config()', () => {
 
   it('Get and set configuration options', () => {
     // https://on.cypress.io/config
-    let myConfig = Cypress.config();
+    const myConfig = Cypress.config();
 
     expect(myConfig).to.have.property('animationDistanceThreshold', 5);
     expect(myConfig).to.have.property('baseUrl', null);
@@ -125,8 +127,8 @@ context('Cypress.dom', () => {
 
   // https://on.cypress.io/dom
   it('.isHidden() - determine if a DOM element is hidden', () => {
-    let hiddenP = Cypress.$('.dom-p p.hidden').get(0);
-    let visibleP = Cypress.$('.dom-p p.visible').get(0);
+    const hiddenP = Cypress.$('.dom-p p.hidden').get(0);
+    const visibleP = Cypress.$('.dom-p p.visible').get(0);
 
     // our first paragraph has css class 'hidden'
     expect(Cypress.dom.isHidden(hiddenP)).to.be.true;
