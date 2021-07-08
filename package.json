@@ -21,8 +21,10 @@
     "test:coverage": "jest --coverage",
     "test:coverage:serve": "serve ./.testreports",
     "test:clear-cache": "jest --clearCache",
-    "test:e2e:open": "cypress open",
-    "test:e2e:run": "cypress run",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:coverage:text": "npx nyc report --reporter=text-summary --reporter=text",
+    "cy:coverage:html": "serve ./testreports-cypress",
     "storybook": "start-storybook -p 6006",
     "storybook:no-cache": "start-storybook -p 6006 --no-manager-cache",
     "build-storybook": "build-storybook -o .storybook-static"
@@ -33,6 +35,17 @@
     "yarn format:check",
     "yarn test"
   ],
+  "nyc": {
+    "report-dir": ".testreports-cypress",
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "include": [
+      "src/**/*.ts(x)"
+    ],
+    "exclude": []
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
     "i18next": "^20.3.1",
@@ -48,6 +61,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@cypress/code-coverage": "^3.9.8",
     "@cypress/react": "^5.9.1",
     "@storybook/addon-a11y": "^6.2.9",
     "@storybook/addon-actions": "^6.2.9",
@@ -72,6 +86,7 @@
     "autoprefixer": "^10.2.6",
     "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
+    "babel-plugin-istanbul": "^6.0.0",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "cypress": "^7.5.0",
     "eslint": "^7.28.0",
